@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@drawable/card_background"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/iconImageView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="@string/icon_desc"
+        android:src="@drawable/ic_placeholder"
+        app:tint="@color/purple_200"
+        />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Workflow Item"
+        android:textColor="@color/dark_text"
+        android:textSize="14sp" />
+</LinearLayout>

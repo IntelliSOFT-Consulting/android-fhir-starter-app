@@ -1,0 +1,205 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "patient-registration",
+  "name": "PatientRegistration",
+  "title": "Patient Registration",
+  "description": "A questionnaire for capturing patient registration details, including contact details for next of kin, administrative area, and some initial observations.",
+  "version": "v2.0",
+  "status": "draft",
+  "publisher": "Kiprotich Japheth",
+  "meta": {
+    "security": [
+      {
+        "code": "3",
+        "display": "Helsehjelp (Full)",
+        "system": "urn:oid:2.16.578.1.12.4.1.1.7618"
+      }
+    ]
+  },
+  "contact": [
+    {
+      "name": "jkiprotich@intellisoftkenya.com"
+    }
+  ],
+  "date": "2024-12-03",
+  "item": [
+    {
+      "linkId": "1",
+      "text": "Patient Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "1.1",
+          "text": "First Name",
+          "type": "string",
+          "required": true,
+          "initial": [
+            {}
+          ]
+        },
+        {
+          "linkId": "25d80a51-8cae-425e-8d48-d75c102064fc",
+          "text": "Middle Name",
+          "type": "string",
+          "required": true,
+          "initial": [
+            {}
+          ]
+        },
+        {
+          "linkId": "1faa4be0-b40f-43c5-85b3-7c4f62ce20a7",
+          "text": "Last Name",
+          "type": "string",
+          "required": true,
+          "initial": [
+            {}
+          ]
+        },
+        {
+          "linkId": "1.2",
+          "text": "Date of Birth",
+          "type": "date",
+          "required": true,
+          "extension": [
+            {
+              "url": "http://ehelse.no/fhir/StructureDefinition/sdf-maxvalue",
+              "valueString": "today()"
+            }
+          ]
+        },
+        {
+          "linkId": "1.3",
+          "text": "Gender",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/administrative-gender",
+                "code": "male",
+                "display": "Male"
+              }
+            },
+            {
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/administrative-gender",
+                "code": "female",
+                "display": "Female"
+              }
+            },
+            {
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/administrative-gender",
+                "code": "other",
+                "display": "Other"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.4",
+          "text": "Contact Number",
+          "type": "string",
+          "required": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/regex",
+              "valueString": "^((\\+|00)(\\d{1,3}))?\\d{5,12}$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "2",
+      "text": "Next of Kin Details",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "2.1",
+          "text": "Full Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "2.2",
+          "text": "Relationship to Patient",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "2.3",
+          "text": "Contact Number",
+          "type": "string",
+          "required": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/regex",
+              "valueString": "^((\\+|00)(\\d{1,3}))?\\d{5,12}$"
+            }
+          ]
+        },
+        {
+          "linkId": "2.4",
+          "text": "Email Address",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "linkId": "3",
+      "text": "Administrative Area",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "3.1",
+          "text": "Street Address",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "3.2",
+          "text": "City",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "3.3",
+          "text": "State/Province",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "3.4",
+          "text": "Postal Code",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    {
+      "linkId": "4",
+      "text": "Observations",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "4.1",
+          "text": "Current Weight",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "4.2",
+          "text": "Current Temperature",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "4.3",
+          "text": "Additional Notes",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
