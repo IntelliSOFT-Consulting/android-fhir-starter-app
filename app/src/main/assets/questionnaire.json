@@ -259,7 +259,7 @@
           ]
         },
         {
-          "text": "Temperature",
+          "text": "",
           "type": "group",
           "linkId": "5.0.0",
           "extension": [
@@ -280,7 +280,7 @@
               "item": [
                 {
                   "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.value",
-                  "text": "Record temperature",
+                  "text": "Current Body temperature",
                   "type": "decimal",
                   "linkId": "5.2.1",
                   "extension": [

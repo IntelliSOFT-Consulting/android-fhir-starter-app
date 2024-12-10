@@ -53,22 +53,20 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun submitQuestionnaire() =
         lifecycleScope.launch {
-            // 5 Replace with code from the codelab to get a questionnaire response.
-// Get a questionnaire response
             val fragment = supportFragmentManager.findFragmentById(R.id.fragment_container_view)
                     as QuestionnaireFragment
             val questionnaireResponse = fragment.getQuestionnaireResponse()
 
-// Print the response to the log
             val jsonParser = FhirContext.forCached(FhirVersionEnum.R4).newJsonParser()
             val questionnaireResponseString =
                 jsonParser.encodeResourceToString(questionnaireResponse)
-            Log.d("response", questionnaireResponseString)
-
-            // 6 Replace with code from the codelab to extract FHIR resources from QuestionnaireResponse.
+            Log.d("extraction response", questionnaireResponseString)
 
             val questionnaire =
                 jsonParser.parseResource(questionnaireJsonString) as Questionnaire
+
+            Log.d("extraction Q", "$questionnaire")
+            Log.d("extraction QR: ", "$questionnaireResponse")
             val bundle = ResourceMapper.extract(questionnaire, questionnaireResponse)
             Log.d("extraction result", jsonParser.encodeResourceToString(bundle))
 

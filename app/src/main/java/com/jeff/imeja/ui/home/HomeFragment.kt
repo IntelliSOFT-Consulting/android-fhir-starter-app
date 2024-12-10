@@ -1,6 +1,7 @@
 package com.jeff.imeja.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,12 @@ import com.jeff.imeja.databinding.FragmentHomeBinding
 import com.jeff.imeja.models.MenuItem
 import com.jeff.imeja.utils.Functions
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import com.google.android.fhir.sync.CurrentSyncJobStatus
+import com.google.android.fhir.sync.SyncJobStatus
+import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
 
@@ -51,7 +58,20 @@ class HomeFragment : Fragment() {
             }
         }
 
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                // Show the user a message when the sync is finished and then refresh the list of patients
+                // on the UI by sending a search patient request
+                viewModel.pollState.collect { handleSyncJobStatus(it) }
+            }
+        }
         return root
+    }
+
+    private fun handleSyncJobStatus(syncJobStatus: CurrentSyncJobStatus) {
+        // Add code to display Toast when sync job  is complete
+       
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

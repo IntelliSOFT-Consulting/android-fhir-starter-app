@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "246135065279",
+    "project_id": "medisphere-af61d",
+    "storage_bucket": "medisphere-af61d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246135065279:android:7ce9ee6db9e023e634140a",
+        "android_client_info": {
+          "package_name": "com.jeff.imeja"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXfPHGAsXLR5lMb72Z2TEJEivtiAU7Fvk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
